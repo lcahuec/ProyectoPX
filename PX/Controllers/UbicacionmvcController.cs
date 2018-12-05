@@ -10,6 +10,7 @@ using PX.Models;
 
 namespace PX.Controllers
 {
+    
     public class UbicacionmvcController : Controller
     {
         private ParqueoDBEntities1 db = new ParqueoDBEntities1();
@@ -22,8 +23,10 @@ namespace PX.Controllers
         }
 
         // GET: Ubicacionmvc/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -37,6 +40,7 @@ namespace PX.Controllers
         }
 
         // GET: Ubicacionmvc/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.Servicio = new SelectList(db.Servicios, "Id", "Id");
@@ -48,6 +52,7 @@ namespace PX.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Servicio")] Ubicacion ubicacion)
         {
             if (ModelState.IsValid)
@@ -62,6 +67,7 @@ namespace PX.Controllers
         }
 
         // GET: Ubicacionmvc/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +88,7 @@ namespace PX.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Servicio")] Ubicacion ubicacion)
         {
             if (ModelState.IsValid)
@@ -95,6 +102,7 @@ namespace PX.Controllers
         }
 
         // GET: Ubicacionmvc/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +118,7 @@ namespace PX.Controllers
         }
 
         // POST: Ubicacionmvc/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
