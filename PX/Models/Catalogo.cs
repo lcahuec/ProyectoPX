@@ -11,7 +11,8 @@ namespace PX.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Catalogo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,9 @@ namespace PX.Models
         }
     
         public int Id { get; set; }
+        [Display(Name = "Tipo de Servicio")]
         public string Tipo_servicio { get; set; }
+        [Display(Name = "Precio Q.")]
         public int Precio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

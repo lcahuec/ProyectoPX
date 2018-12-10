@@ -11,7 +11,8 @@ namespace PX.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class parqueo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,13 @@ namespace PX.Models
         }
     
         public int Id { get; set; }
+
         public string Nombre { get; set; }
         public int Ubicacion { get; set; }
         public int Precio { get; set; }
         public int Capacidad { get; set; }
         public string Estado { get; set; }
+        [Display(Name = "cod. Vehiculo")]
         public int Parqueo_Vehiculo { get; set; }
     
         public virtual Vehiculo_parqueo Vehiculo_parqueo { get; set; }

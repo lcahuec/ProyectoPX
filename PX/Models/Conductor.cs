@@ -11,7 +11,8 @@ namespace PX.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Conductor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,10 +22,15 @@ namespace PX.Models
         }
     
         public int Id { get; set; }
+        [Display(Name = "Tipo de Licencia")]
         public string Tipo_Licencia { get; set; }
+        [Display(Name = "DPI")]
         public int Dpi { get; set; }
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; }
+        [Display(Name = "Telefono")]
         public int Telefono { get; set; }
+        [Display(Name = "Edad")]
         public int Edad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
